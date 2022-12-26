@@ -228,7 +228,6 @@
 <span class="sd">        Data container object.</span>
 <span class="sd">    model : Model</span>
 <span class="sd">        Model container object.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -245,11 +244,6 @@
 <span class="sd">        ----------</span>
 <span class="sd">        model_name : str</span>
 <span class="sd">            Name of model to construct.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
             <span class="n">inputs</span><span class="o">=</span><span class="nb">list</span><span class="p">(),</span> <span class="n">outputs</span><span class="o">=</span><span class="nb">list</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="n">model_name</span>
@@ -267,24 +261,13 @@
 <span class="sd">        ----------</span>
 <span class="sd">        model_path : str</span>
 <span class="sd">            Path to a model location.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">model_path</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">refresh_model</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">MODEL</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.refresh_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.refresh_model">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Refresh attributes of model container.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Refresh attributes of model container.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">input_layers</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">name</span><span class="p">:</span> <span class="n">layer</span>
@@ -320,11 +303,6 @@
 <span class="sd">        connect_to : str | list[str] | None</span>
 <span class="sd">            A single layer name or a sequence of layers&#39; names. For Input</span>
 <span class="sd">            layer -- None.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">connect_to</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">layer</span> <span class="o">=</span> <span class="p">{</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">layer_instance</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)}</span>
@@ -350,11 +328,6 @@
 <span class="sd">        ----------</span>
 <span class="sd">        outputs_names : str | list[str]</span>
 <span class="sd">            Names of new outputs.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">output_layers</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">name</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">outputs_names</span>
@@ -369,23 +342,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">OUTPUTS_SET</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.show_model_summary"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.show_model_summary">[docs]</a>    <span class="k">def</span> <span class="nf">show_model_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Display a model summary.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Display a model summary.&quot;&quot;&quot;</span>
         <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="ModelManager.plot_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.plot_model">[docs]</a>    <span class="k">def</span> <span class="nf">plot_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Display a model graph.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Display a model graph.&quot;&quot;&quot;</span>
         <span class="n">display</span><span class="p">(</span>
             <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">plot_model</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="p">,</span>
@@ -401,11 +362,6 @@
 
 <span class="sd">        TensorFlow `save` function is used to save a model within the given</span>
 <span class="sd">        path.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
             <span class="n">filepath</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;db/Models/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.h5&quot;</span><span class="p">,</span>
@@ -419,11 +375,6 @@
 <span class="sd">        ----------</span>
 <span class="sd">        optimizer : Any</span>
 <span class="sd">            TensorFlow optimizer object.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">optimizer</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">OPTIMIZER_SELECTED</span><span class="p">)</span></div>
@@ -437,11 +388,6 @@
 <span class="sd">            Layer name for the loss function to bind.</span>
 <span class="sd">        loss : Any</span>
 <span class="sd">            TensorFlow loss function object.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">losses</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span> <span class="o">=</span> <span class="n">loss</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">LOSSES_SELECTED</span><span class="p">)</span></div>
@@ -455,11 +401,6 @@
 <span class="sd">            Layer name for the metric to bind.</span>
 <span class="sd">        metric : Any</span>
 <span class="sd">            TensorFlow metric object.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metric</span><span class="p">())</span></div>
 
@@ -470,11 +411,6 @@
 <span class="sd">        ----------</span>
 <span class="sd">        callback : Any</span>
 <span class="sd">            TensorFlow callback object.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">callback</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
 
@@ -482,11 +418,6 @@
         <span class="sd">&quot;&quot;&quot;Compile a model.</span>
 
 <span class="sd">        TensorFlow `compile` function is used to compile a model.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
             <span class="n">optimizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">optimizer</span><span class="p">,</span>
@@ -509,11 +440,6 @@
 <span class="sd">            Number of epochs hyperparameter.</span>
 <span class="sd">        val_split : float</span>
 <span class="sd">            Validation split hyperparameter.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
             <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">input_train_data</span><span class="p">,</span>
@@ -536,11 +462,6 @@
 <span class="sd">        ----------</span>
 <span class="sd">        batch_size : int</span>
 <span class="sd">            Batch size hyperparameter.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span>
             <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">input_test_data</span><span class="p">,</span>
@@ -563,11 +484,6 @@
 <span class="sd">        ----------</span>
 <span class="sd">        batch_size : int</span>
 <span class="sd">            Batch size hyperparameter.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
             <span class="n">x</span><span class="o">=</span><span class="p">{</span>
@@ -596,11 +512,6 @@
 <span class="sd">            Line color.</span>
 <span class="sd">        same_figure : bool</span>
 <span class="sd">            Whether to plot incoming values on the same figure.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">y_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">training_history</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
         <span class="n">x_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_data</span><span class="p">)]</span>
@@ -639,7 +550,6 @@
 <span class="sd">        -------</span>
 <span class="sd">        bool</span>
 <span class="sd">            True if layer will not be overfilled, False otherwise.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">layer_type</span> <span class="o">==</span> <span class="s2">&quot;input&quot;</span><span class="p">:</span>
             <span class="n">shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">input_shapes</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span>
@@ -657,11 +567,6 @@
 <span class="sd">        ----------</span>
 <span class="sd">        callback_type : str</span>
 <span class="sd">            A callback to invoke inside an observer.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">observer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_observers</span><span class="p">:</span>
             <span class="n">callback</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">observer</span><span class="p">,</span> <span class="n">callback_type</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -670,84 +575,83 @@
                 <span class="n">callback</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="ModelManager.model_exists"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.model_exists">[docs]</a>    <span class="k">def</span> <span class="nf">model_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Check if model is constructed.</span>
+        <span class="sd">&quot;&quot;&quot;Check if model exists.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        bool</span>
-<span class="sd">            True if model is constructed, False otherwise.</span>
-
+<span class="sd">            True if model exists, False otherwise.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span> <span class="k">else</span> <span class="kc">False</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;str: Model name.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Model name.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">name</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">model_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Any: Tesnsorflow model object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Tesnsorflow model object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">input_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;dict[str, Any]: Dictionary of model input layers.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Dictionary of model input layers.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">input_layers</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">output_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;dict[str, Any]: Dictionary of model output layers.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Dictionary of model output layers.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">output_layers</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">layers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;dict[str, Any]: Dictionary of all model layers.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Dictionary of all model layers.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">layers</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">input_shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;dict[str, int]: Dictionary of model input shapes.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Dictionary of model input shapes.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">input_shapes</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">output_shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;dict[str, int]: Dictionary of model output shapes.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Dictionary of model output shapes.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">output_shapes</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">compiled</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;bool: Whether a model is compiled.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Whether a model is compiled.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">compiled</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Any: TensorFlow optimizer object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;TensorFlow optimizer object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">optimizer</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">losses</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;dict[str, Any]: Dictionary of model loss functions.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Dictionary of model loss functions.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">losses</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
-        <span class="sd">&quot;&quot;&quot;dict[str, list[Any]]: Dictionary of model metrics.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Dictionary of model metrics.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">metrics</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;list[Any]: List of model callbacks.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;List of model callbacks.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">callbacks</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">training_history</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
-        <span class="sd">&quot;&quot;&quot;dict[str, list[Any]]: Dictionary of model training history.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Dictionary of model training history.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">training_history</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">observers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;list[Any]: List of manager&#39;s observers.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;List of manager&#39;s observers.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_observers</span>
 
     <span class="nd">@observers</span><span class="o">.</span><span class="n">setter</span>
