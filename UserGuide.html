@@ -2,7 +2,8 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Accepted Input" href="AcceptedInput.html" /><link rel="prev" title="Local Installation" href="LocalInstallation.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Accepted Input" href="AcceptedInput.html" /><link rel="prev" title="Local Installation" href="LocalInstallation.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>User Manual - ML UI 0.1 documentation</title>
@@ -209,58 +210,58 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="user-manual">
+          <section id="user-manual">
 <h1>User Manual<a class="headerlink" href="#user-manual" title="Permalink to this heading">#</a></h1>
-<div class="section" id="start">
+<section id="start">
 <h2>Start<a class="headerlink" href="#start" title="Permalink to this heading">#</a></h2>
 <p>If you are using <strong>Binder</strong>, there is no need to install anything, because the app will be built automatically. However, if you want to install it locally, follow the instructions in <a class="reference internal" href="LocalInstallation.html"><span class="doc">Local Installation</span></a>. Here is a quick reference on how to start <strong>Voilà</strong> on <strong>Jupyter</strong> server.</p>
 <a class="reference internal image-reference" href="_images/start_app.gif"><img alt="_images/start_app.gif" src="_images/start_app.gif" style="width: 80%;" /></a>
-</div>
-<div class="section" id="links">
+</section>
+<section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this heading">#</a></h2>
 <p>To successfully use the app, you need a properly formatted Dataset (<a class="reference internal" href="AcceptedInput.html#acceptedinput"><span class="std std-ref">requirements</span></a>), which you can upload to <strong>Jupyter</strong> server via the given link. Other files, like Models, Graphs, Logs from Callbacks, which you will create during the session, could also be found via the corresponding links. You can download files as well.</p>
 <a class="reference internal image-reference" href="_images/links.gif"><img alt="_images/links.gif" src="_images/links.gif" style="width: 80%;" /></a>
-</div>
-<div class="section" id="upload">
+</section>
+<section id="upload">
 <h2>Upload<a class="headerlink" href="#upload" title="Permalink to this heading">#</a></h2>
 <p>After uploading your Dataset and, optionally, Model to <strong>Jupyter</strong> server, you need to upload them inside the app itself. Here is how.</p>
 <a class="reference internal image-reference" href="_images/upload.gif"><img alt="_images/upload.gif" src="_images/upload.gif" style="width: 80%;" /></a>
-</div>
-<div class="section" id="data-preparation">
+</section>
+<section id="data-preparation">
 <h2>Data Preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">#</a></h2>
 <p>In this section, you can explore a Dataset: display its portion, examine some statistics, plot different columns and save the result figures. Everything is straightforward.</p>
 <a class="reference internal image-reference" href="_images/data_preparation_1.gif"><img alt="_images/data_preparation_1.gif" src="_images/data_preparation_1.gif" style="width: 80%;" /></a>
 <p>You can also set columns to be passed to each Model Input and Output as well as split Data into Train and Test portions. This is essential for the further training process. Use <em>Shift</em> and <em>Ctrl</em> keys to select multiple sequential or distinct columns.</p>
 <a class="reference internal image-reference" href="_images/data_preparation_2.gif"><img alt="_images/data_preparation_2.gif" src="_images/data_preparation_2.gif" style="width: 80%;" /></a>
-</div>
-<div class="section" id="model-configuration">
+</section>
+<section id="model-configuration">
 <h2>Model Configuration<a class="headerlink" href="#model-configuration" title="Permalink to this heading">#</a></h2>
 <p>If you haven’t got any Model yet, you can create and configure one in this section. Firstly, enter the Model name to create it. Secondly, configure the Layers. There are several types of Layers currently in the app, which you can read about <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers">here</a>. Finally, you should set Outputs in order to construct and view the Model.</p>
 <a class="reference internal image-reference" href="_images/model_configuration_1.gif"><img alt="_images/model_configuration_1.gif" src="_images/model_configuration_1.gif" style="width: 80%;" /></a>
 <p>After the construction, you can display Summary and Graph as well as save the Model. Graph image and Model configuration file could be found inside <strong>Images</strong> and <strong>Models</strong> folders, respectively.</p>
 <a class="reference internal image-reference" href="_images/model_configuration_2.gif"><img alt="_images/model_configuration_2.gif" src="_images/model_configuration_2.gif" style="width: 80%;" /></a>
-</div>
-<div class="section" id="model-compilation">
+</section>
+<section id="model-compilation">
 <h2>Model Compilation<a class="headerlink" href="#model-compilation" title="Permalink to this heading">#</a></h2>
 <p>In this section, you can compile either uploaded or created Model. Choose an Optimizer with some hyperparameters first, then select Loss Functions and optional Metrics for each Model Output. Useful links: <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/optimizers">Optimizers</a>, <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/losses">Loss Functions</a>, <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/metrics">Metrics</a>.</p>
 <a class="reference internal image-reference" href="_images/model_compilation.gif"><img alt="_images/model_compilation.gif" src="_images/model_compilation.gif" style="width: 80%;" /></a>
-</div>
-<div class="section" id="model-training">
+</section>
+<section id="model-training">
 <h2>Model Training<a class="headerlink" href="#model-training" title="Permalink to this heading">#</a></h2>
 <p>In this section, you can train the compiled Model. Select some optional Callbacks (explore them <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/callbacks">here</a>) for the training process, then specify hyperparameters and start training. It will take some time depending on the resources you have. After that, you can inspect and save plots of Loss Functions and Metrics from training history as well as save the trained Model.</p>
 <a class="reference internal image-reference" href="_images/model_training.gif"><img alt="_images/model_training.gif" src="_images/model_training.gif" style="width: 80%;" /></a>
-</div>
-<div class="section" id="model-evaluation">
+</section>
+<section id="model-evaluation">
 <h2>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this heading">#</a></h2>
 <p>In this section, you can evaluate either trained or uploaded Model using compiled Loss Functions and Metrics on a Test Data. If you upload already trained Model and only want to evaluate its performance, then select Test Data portion as 100% in <strong>Data Preparation</strong> section.</p>
 <a class="reference internal image-reference" href="_images/model_evaluation.gif"><img alt="_images/model_evaluation.gif" src="_images/model_evaluation.gif" style="width: 80%;" /></a>
-</div>
-<div class="section" id="model-predictions">
+</section>
+<section id="model-predictions">
 <h2>Model Predictions<a class="headerlink" href="#model-predictions" title="Permalink to this heading">#</a></h2>
 <p>In this section, you can use either trained or uploaded Model to predict new values from the given Data. It is not recommended for this purpose to use the same Dataset as for training, because Model will be biased.</p>
 <a class="reference internal image-reference" href="_images/model_predictions.gif"><img alt="_images/model_predictions.gif" src="_images/model_predictions.gif" style="width: 80%;" /></a>
-</div>
-</div>
+</section>
+</section>
 
         </article>
       </div>

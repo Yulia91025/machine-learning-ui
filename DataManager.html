@@ -2,7 +2,8 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="ModelManager Module" href="ModelManager.html" /><link rel="prev" title="Managers" href="Managers.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="ModelManager Module" href="ModelManager.html" /><link rel="prev" title="Managers" href="Managers.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>DataManager Module - ML UI 0.1 documentation</title>
@@ -133,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -203,15 +204,147 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="section" id="datamanager-module">
-<h1>DataManager Module<a class="headerlink" href="#datamanager-module" title="Permalink to this heading">#</a></h1>
-</div>
+          <section id="module-src.Managers.DataManager">
+<span id="datamanager-module"></span><h1>DataManager Module<a class="headerlink" href="#module-src.Managers.DataManager" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.Managers.DataManager.</span></span><span class="sig-name descname"><span class="pre">DataManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manager for data preperation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.add_columns">
+<span class="sig-name descname"><span class="pre">add_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.add_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.add_columns" title="Permalink to this definition">#</a></dt>
+<dd><p>Specify columns for model layers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.check_inputs_fullness">
+<span class="sig-name descname"><span class="pre">check_inputs_fullness</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.check_inputs_fullness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.check_inputs_fullness" title="Permalink to this definition">#</a></dt>
+<dd><p>Check data fullness of input layers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.check_missing_values">
+<span class="sig-name descname"><span class="pre">check_missing_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.check_missing_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.check_missing_values" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.check_non_numeric_columns">
+<span class="sig-name descname"><span class="pre">check_non_numeric_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.check_non_numeric_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.check_non_numeric_columns" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.check_outputs_fullness">
+<span class="sig-name descname"><span class="pre">check_outputs_fullness</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.check_outputs_fullness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.check_outputs_fullness" title="Permalink to this definition">#</a></dt>
+<dd><p>Check data fullness of output layers.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.columns">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.columns" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.columns_per_layer">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns_per_layer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.columns_per_layer" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.file">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.file" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.file_exists">
+<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.file_exists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.file_exists" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if file exists.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.input_columns">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.input_columns" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.input_test_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_test_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.input_test_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.input_train_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_train_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.input_train_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.notify_observers">
+<span class="sig-name descname"><span class="pre">notify_observers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.notify_observers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.notify_observers" title="Permalink to this definition">#</a></dt>
+<dd><p>Notifier for manager’s observers.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.observers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">observers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.observers" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.output_columns">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.output_columns" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.output_test_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_test_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.output_test_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.output_train_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_train_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#src.Managers.DataManager.DataManager.output_train_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.refresh_data">
+<span class="sig-name descname"><span class="pre">refresh_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.refresh_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.refresh_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.show_data_grid">
+<span class="sig-name descname"><span class="pre">show_data_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">begin_row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.show_data_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.show_data_grid" title="Permalink to this definition">#</a></dt>
+<dd><p>Show data grid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.show_data_plot">
+<span class="sig-name descname"><span class="pre">show_data_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.show_data_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.show_data_plot" title="Permalink to this definition">#</a></dt>
+<dd><p>Show data plot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.show_data_stats">
+<span class="sig-name descname"><span class="pre">show_data_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.show_data_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.show_data_stats" title="Permalink to this definition">#</a></dt>
+<dd><p>Show data statistics.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.split_data">
+<span class="sig-name descname"><span class="pre">split_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.split_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.split_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Split data into train and test sets.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.Managers.DataManager.DataManager.upload_file">
+<span class="sig-name descname"><span class="pre">upload_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/Managers/DataManager.html#DataManager.upload_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.Managers.DataManager.DataManager.upload_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Read file to pandas format.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 
         </article>
       </div>
@@ -256,8 +389,52 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">DataManager Module</a><ul>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager"><code class="docutils literal notranslate"><span class="pre">DataManager</span></code></a><ul>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.add_columns"><code class="docutils literal notranslate"><span class="pre">DataManager.add_columns()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.check_inputs_fullness"><code class="docutils literal notranslate"><span class="pre">DataManager.check_inputs_fullness()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.check_missing_values"><code class="docutils literal notranslate"><span class="pre">DataManager.check_missing_values()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.check_non_numeric_columns"><code class="docutils literal notranslate"><span class="pre">DataManager.check_non_numeric_columns()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.check_outputs_fullness"><code class="docutils literal notranslate"><span class="pre">DataManager.check_outputs_fullness()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.columns"><code class="docutils literal notranslate"><span class="pre">DataManager.columns</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.columns_per_layer"><code class="docutils literal notranslate"><span class="pre">DataManager.columns_per_layer</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.file"><code class="docutils literal notranslate"><span class="pre">DataManager.file</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.file_exists"><code class="docutils literal notranslate"><span class="pre">DataManager.file_exists()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.input_columns"><code class="docutils literal notranslate"><span class="pre">DataManager.input_columns</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.input_test_data"><code class="docutils literal notranslate"><span class="pre">DataManager.input_test_data</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.input_train_data"><code class="docutils literal notranslate"><span class="pre">DataManager.input_train_data</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.notify_observers"><code class="docutils literal notranslate"><span class="pre">DataManager.notify_observers()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.observers"><code class="docutils literal notranslate"><span class="pre">DataManager.observers</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.output_columns"><code class="docutils literal notranslate"><span class="pre">DataManager.output_columns</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.output_test_data"><code class="docutils literal notranslate"><span class="pre">DataManager.output_test_data</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.output_train_data"><code class="docutils literal notranslate"><span class="pre">DataManager.output_train_data</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.refresh_data"><code class="docutils literal notranslate"><span class="pre">DataManager.refresh_data()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.show_data_grid"><code class="docutils literal notranslate"><span class="pre">DataManager.show_data_grid()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.show_data_plot"><code class="docutils literal notranslate"><span class="pre">DataManager.show_data_plot()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.show_data_stats"><code class="docutils literal notranslate"><span class="pre">DataManager.show_data_stats()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.split_data"><code class="docutils literal notranslate"><span class="pre">DataManager.split_data()</span></code></a></li>
+<li><a class="reference internal" href="#src.Managers.DataManager.DataManager.upload_file"><code class="docutils literal notranslate"><span class="pre">DataManager.upload_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
