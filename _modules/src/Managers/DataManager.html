@@ -225,7 +225,7 @@
 
 
 <div class="viewcode-block" id="DataManager"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager">[docs]</a><span class="k">class</span> <span class="nc">DataManager</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Manager for data preperation.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manager for data preparation.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -241,7 +241,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_observers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 
 <div class="viewcode-block" id="DataManager.upload_file"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.upload_file">[docs]</a>    <span class="k">def</span> <span class="nf">upload_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Read file to pandas format.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Read file to pandas format.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -270,7 +270,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">FILE</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="DataManager.check_missing_values"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.check_missing_values">[docs]</a>    <span class="k">def</span> <span class="nf">check_missing_values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Check if file contains missing values.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if file contains missing values.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -280,7 +280,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="DataManager.check_non_numeric_columns"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.check_non_numeric_columns">[docs]</a>    <span class="k">def</span> <span class="nf">check_non_numeric_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Check if file contains non-numeric values.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if file contains non-numeric values.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -290,7 +290,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="DataManager.refresh_data"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.refresh_data">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Refresh attributes of data container.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Refresh attributes of data container.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">input_columns</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="nb">list</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">input_layers</span><span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">output_columns</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="nb">list</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">output_layers</span><span class="p">}</span>
@@ -305,7 +305,7 @@
 <div class="viewcode-block" id="DataManager.show_data_grid"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.show_data_grid">[docs]</a>    <span class="k">def</span> <span class="nf">show_data_grid</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">begin_row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end_row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">begin_col</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end_col</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Show data grid.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Show data grid.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -325,7 +325,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="DataManager.show_data_stats"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.show_data_stats">[docs]</a>    <span class="k">def</span> <span class="nf">show_data_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Show data statistics.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Show data statistics.&quot;&quot;&quot;</span>
         <span class="n">data_stat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
             <span class="p">[</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span>
@@ -340,7 +340,7 @@
         <span class="n">display</span><span class="p">(</span><span class="n">DataGrid</span><span class="p">(</span><span class="n">dataframe</span><span class="o">=</span><span class="n">data_stat</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="DataManager.show_data_plot"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.show_data_plot">[docs]</a>    <span class="k">def</span> <span class="nf">show_data_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Show data plot.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Show data plot.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -369,7 +369,7 @@
 <div class="viewcode-block" id="DataManager.add_columns"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.add_columns">[docs]</a>    <span class="k">def</span> <span class="nf">add_columns</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">layer_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">layer</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">columns</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Specify columns for model layers.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Specify columns for model layers.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -390,7 +390,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">columns_per_layer</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="DataManager.check_inputs_fullness"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.check_inputs_fullness">[docs]</a>    <span class="k">def</span> <span class="nf">check_inputs_fullness</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Check data fullness of input layers.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check data fullness of input layers.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -403,7 +403,7 @@
         <span class="k">return</span> <span class="kc">True</span></div>
 
 <div class="viewcode-block" id="DataManager.check_outputs_fullness"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.check_outputs_fullness">[docs]</a>    <span class="k">def</span> <span class="nf">check_outputs_fullness</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Check data fullness of output layers.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check data fullness of output layers.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -416,7 +416,7 @@
         <span class="k">return</span> <span class="kc">True</span></div>
 
 <div class="viewcode-block" id="DataManager.split_data"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.split_data">[docs]</a>    <span class="k">def</span> <span class="nf">split_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Split data into train and test sets.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split data into train and test sets.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -445,7 +445,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">DATA_SPLIT</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="DataManager.notify_observers"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.notify_observers">[docs]</a>    <span class="k">def</span> <span class="nf">notify_observers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Notify manager&#39;s observers with a specified callback.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Notify manager&#39;s observers with a specified callback.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -459,7 +459,7 @@
                 <span class="n">callback</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="DataManager.file_exists"><a class="viewcode-back" href="../../../DataManager.html#src.Managers.DataManager.DataManager.file_exists">[docs]</a>    <span class="k">def</span> <span class="nf">file_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Check if file exists.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if file exists.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -470,52 +470,52 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Pandas DataFrame containing the data.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Pandas DataFrame containing the data.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">file</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">columns</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;List of data columns.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;List of data columns.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">columns</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">input_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of columns bound to each input layer.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of columns bound to each input layer.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">input_columns</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">output_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of columns bound to each output layer.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of columns bound to each output layer.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">output_columns</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">columns_per_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of columns&#39; counters for each layer.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of columns&#39; counters for each layer.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">columns_per_layer</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">input_train_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of train data portions for each input layer.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of train data portions for each input layer.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">input_train_data</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">output_train_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of train data portions for each output layer.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of train data portions for each output layer.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">output_train_data</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">input_test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of test data portions for each input layer.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of test data portions for each input layer.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">input_test_data</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">output_test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of test data portions for each output layer.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of test data portions for each output layer.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">output_test_data</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">observers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;List of manager&#39;s observers.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;List of manager&#39;s observers.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_observers</span>
 
     <span class="nd">@observers</span><span class="o">.</span><span class="n">setter</span>

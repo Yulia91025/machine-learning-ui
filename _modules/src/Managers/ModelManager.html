@@ -220,7 +220,7 @@
 
 
 <div class="viewcode-block" id="ModelManager"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager">[docs]</a><span class="k">class</span> <span class="nc">ModelManager</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Manager for operating the model configuration.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manager for operating the model configuration.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -236,7 +236,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_observers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 
 <div class="viewcode-block" id="ModelManager.create_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.create_model">[docs]</a>    <span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Create a model from scratch.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a model from scratch.</span>
 
 <span class="sd">        TensorFlow `Model` class is used to construct a new model.</span>
 
@@ -252,7 +252,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">MODEL</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.upload_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.upload_model">[docs]</a>    <span class="k">def</span> <span class="nf">upload_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Upload TensorFlow model to the app.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Upload TensorFlow model to the app.</span>
 
 <span class="sd">        TensorFlow `load_model` function is used to upload a model within</span>
 <span class="sd">        the given path.</span>
@@ -267,7 +267,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">MODEL</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.refresh_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.refresh_model">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Refresh attributes of model container.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Refresh attributes of model container.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">input_layers</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">name</span><span class="p">:</span> <span class="n">layer</span>
@@ -294,7 +294,7 @@
 <div class="viewcode-block" id="ModelManager.add_layer"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.add_layer">[docs]</a>    <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">layer_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">connect_to</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Add layer to a model.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add layer to a model.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -320,7 +320,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">LAYER_ADDED</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.set_model_outputs"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.set_model_outputs">[docs]</a>    <span class="k">def</span> <span class="nf">set_model_outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputs_names</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Set model outputs.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set model outputs.</span>
 
 <span class="sd">        Reconstruct a model with new outputs specified by names.</span>
 
@@ -342,11 +342,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">OUTPUTS_SET</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.show_model_summary"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.show_model_summary">[docs]</a>    <span class="k">def</span> <span class="nf">show_model_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Display a model summary.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display a model summary.&quot;&quot;&quot;</span>
         <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="ModelManager.plot_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.plot_model">[docs]</a>    <span class="k">def</span> <span class="nf">plot_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Display a model graph.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display a model graph.&quot;&quot;&quot;</span>
         <span class="n">display</span><span class="p">(</span>
             <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">plot_model</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span><span class="p">,</span>
@@ -358,7 +358,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.save_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.save_model">[docs]</a>    <span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Save a model to &#39;.h5&#39; format.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save a model to &#39;.h5&#39; format.</span>
 
 <span class="sd">        TensorFlow `save` function is used to save a model within the given</span>
 <span class="sd">        path.</span>
@@ -369,7 +369,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.select_optimizer"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.select_optimizer">[docs]</a>    <span class="k">def</span> <span class="nf">select_optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Set a model optimizer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a model optimizer.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -380,7 +380,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">OPTIMIZER_SELECTED</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.add_loss"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.add_loss">[docs]</a>    <span class="k">def</span> <span class="nf">add_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Add a model loss function.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a model loss function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -393,7 +393,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">LOSSES_SELECTED</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.add_metric"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.add_metric">[docs]</a>    <span class="k">def</span> <span class="nf">add_metric</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">metric</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Add a model metric.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a model metric.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -405,7 +405,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metric</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="ModelManager.add_callback"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.add_callback">[docs]</a>    <span class="k">def</span> <span class="nf">add_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Add a model callbacks.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a model callbacks.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -415,7 +415,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">callback</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="ModelManager.compile_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.compile_model">[docs]</a>    <span class="k">def</span> <span class="nf">compile_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Compile a model.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compile a model.</span>
 
 <span class="sd">        TensorFlow `compile` function is used to compile a model.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -428,7 +428,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">MODEL_COMPILED</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.fit_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.fit_model">[docs]</a>    <span class="k">def</span> <span class="nf">fit_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">val_split</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Fit a model to a training data.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fit a model to a training data.</span>
 
 <span class="sd">        TensorFlow `fit` function is used to train a model.</span>
 
@@ -454,7 +454,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">notify_observers</span><span class="p">(</span><span class="n">callback_type</span><span class="o">=</span><span class="n">Observe</span><span class="o">.</span><span class="n">MODEL_TRAINED</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.evaluate_model"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.evaluate_model">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Evaluate a model.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate a model.</span>
 
 <span class="sd">        TensorFlow `evaluate` function is used to evaluate a model.</span>
 
@@ -476,7 +476,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.make_predictions"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.make_predictions">[docs]</a>    <span class="k">def</span> <span class="nf">make_predictions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Make a model predictions.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make a model predictions.</span>
 
 <span class="sd">        TensorFlow `predict` function is used to predict new values.</span>
 
@@ -502,7 +502,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">output_layers</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">predictions</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModelManager.plot_history"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.plot_history">[docs]</a>    <span class="k">def</span> <span class="nf">plot_history</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">same_figure</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Plot a training history against number of epochs.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot a training history against number of epochs.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -535,7 +535,7 @@
 <div class="viewcode-block" id="ModelManager.check_layer_capacity"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.check_layer_capacity">[docs]</a>    <span class="k">def</span> <span class="nf">check_layer_capacity</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">layer_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">layer</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">num_columns</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Check if layer will be overfilled.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if layer will be overfilled.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -561,7 +561,7 @@
         <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">num_columns</span> <span class="o">+</span> <span class="n">current_num_columns</span> <span class="o">&gt;</span> <span class="n">shape</span> <span class="k">else</span> <span class="kc">True</span></div>
 
 <div class="viewcode-block" id="ModelManager.notify_observers"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.notify_observers">[docs]</a>    <span class="k">def</span> <span class="nf">notify_observers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Notify manager&#39;s observers with a specified callback.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Notify manager&#39;s observers with a specified callback.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -575,7 +575,7 @@
                 <span class="n">callback</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="ModelManager.model_exists"><a class="viewcode-back" href="../../../ModelManager.html#src.Managers.ModelManager.ModelManager.model_exists">[docs]</a>    <span class="k">def</span> <span class="nf">model_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Check if model exists.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if model exists.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -586,72 +586,72 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Model name.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Model name.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">name</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">model_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Tesnsorflow model object.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tesnsorflow model object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">instance</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">input_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of model input layers.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of model input layers.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">input_layers</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">output_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of model output layers.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of model output layers.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">output_layers</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">layers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of all model layers.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of all model layers.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">layers</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">input_shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of model input shapes.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of model input shapes.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">input_shapes</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">output_shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of model output shapes.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of model output shapes.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">output_shapes</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">compiled</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Whether a model is compiled.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Whether a model is compiled.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">compiled</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;TensorFlow optimizer object.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TensorFlow optimizer object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">optimizer</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">losses</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of model loss functions.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of model loss functions.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">losses</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of model metrics.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of model metrics.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">metrics</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;List of model callbacks.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;List of model callbacks.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">callbacks</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">training_history</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
-        <span class="sd">&quot;&quot;&quot;Dictionary of model training history.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dictionary of model training history.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">training_history</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">observers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;List of manager&#39;s observers.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;List of manager&#39;s observers.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_observers</span>
 
     <span class="nd">@observers</span><span class="o">.</span><span class="n">setter</span>
